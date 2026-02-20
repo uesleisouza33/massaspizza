@@ -6,11 +6,13 @@ export default class Pizza{
     }
 
     calcularArea(){
-        return Math.PI * Math.pow(this.raio, 2)
+        let area = Math.PI * Math.pow(this.raio, 2)
+        return area
     }
 
     calcularVolume(){
-        return this.calcularArea() * this.altura
+        let volume = this.calcularArea() * this.altura
+        return volume
     }
 
     getPesoUnitario(){
