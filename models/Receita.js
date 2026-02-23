@@ -27,7 +27,7 @@ export default class Receita {
       this.ovo,
     ].reduce((total, ingrediente) => total + ingrediente, 0);
 
-    // this.receita = {}; // variavel tipo objeto
+    this.receita = {}; // variavel tipo objeto
     this.calcularQtdeIngredientes();
 
     this.totalPizza = 0;
@@ -45,14 +45,21 @@ export default class Receita {
       acucar: parseFloat((this.acucar * fatorEscala).toFixed(2)),
       ovo: parseFloat((this.ovo * fatorEscala).toFixed(2)),
     };
+
+    return this.receita;
   }
 
   verificarQtdeOvos() {
-    let quantidadeOvos = Math.round((this.receita.ovo / 56))  
-    return quantidadeOvos
+    let quantidadeOvos = Math.ceil(this.receita.ovo / 56);
+    this.receita.ovo = quantidadeOvos;
   }
 
-  calcularQtdePizza() {
+  calcularQtdePizza(pesoUnitario) {
+    this.totalPizza = 1000000 / pesoUnitario;
+
+    this.verificarQtdePizza();
+
+    return this.totalPizza
   }
 
   verificarQtdePizza() {}

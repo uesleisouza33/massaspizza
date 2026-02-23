@@ -2,7 +2,7 @@ export default class Pizza{
     constructor(diametro, espessura){
         this.raio = diametro / 2
         this.espessura = espessura
-        this.densidade = 0.85
+        this.densidade = 0.85 // Regra de negócio
     }
 
     calcularArea(){
